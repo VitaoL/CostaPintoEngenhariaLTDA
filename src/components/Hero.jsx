@@ -21,6 +21,7 @@ function Hero() {
       });
   }, []);
 
+  // loading
   if (loading) {
     return (
       <section id="inicio">
@@ -29,20 +30,32 @@ function Hero() {
     );
   }
 
+  // erro
   if (error) {
     return (
       <section id="inicio">
-        <p style={{ color: "red" }}>Erro ao carregar dados da empresa: {error}</p>
+        <p style={{ color: "red" }}>
+          Erro ao carregar dados da empresa: {error.toString()}
+        </p>
       </section>
     );
   }
 
+  // sucesso
   return (
     <section id="inicio">
       <h1>{enterprise.name}</h1>
-      <p>{enterprise.description}</p>
+      <p>{enterprise.shortDescription}</p>
 
-      <button>Saiba Mais</button>
+      <button
+        onClick={() =>
+          document
+            .getElementById("sobre")
+            ?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        Saiba Mais
+      </button>
     </section>
   );
 }
