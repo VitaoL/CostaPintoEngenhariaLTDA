@@ -21,7 +21,6 @@ function Hero() {
       });
   }, []);
 
-  // loading
   if (loading) {
     return (
       <section id="inicio">
@@ -30,7 +29,6 @@ function Hero() {
     );
   }
 
-  // erro
   if (error) {
     return (
       <section id="inicio">
@@ -41,7 +39,6 @@ function Hero() {
     );
   }
 
-  // sucesso
   return (
     <section id="inicio">
       <h1>{enterprise.name}</h1>

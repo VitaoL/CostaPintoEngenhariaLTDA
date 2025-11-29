@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import { useEffect, useState } from "react";
 import { fetchHeaderData, fetchEnterpriseData } from "../mockData";
 
