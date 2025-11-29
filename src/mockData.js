@@ -40,21 +40,20 @@ export const serviceTypes = [
   },
 ];
 
-// OBRAS / LOCAIS onde ele já trabalhou – usado no carrossel
 export const servicesData = [
   {
     id: 1,
-    name: "Obra Rodoviária – BR-381",
-    description: "Execução de obras de contenção e pavimentação.",
-    imageUrl: "/imagens/obra-381.jpg",
-    link: "https://maps.google.com/...",
+    name: "Vale S.A.",
+    description: "A Vale S.A. é uma das maiores empresas de mineração e logística do mundo, líder global na produção de minério de ferro e pelotas, essenciais para a indústria siderúrgica",
+    imageUrl: "./public/VALE.png",
+    link: "https://vale.com/pt",
   },
   {
     id: 2,
-    name: "Estação de Tratamento de Água – ETA X",
-    description: "Projeto e execução de obras de saneamento.",
-    imageUrl: "/imagens/eta-x.jpg",
-    link: "https://...",
+    name: "Motiva",
+    description: "O Grupo CCR, nosso antigo nome, marcou história. Agora, como Motiva, nosso compromisso com o Brasil, com nossos milhões de clientes, milhares de acionistas e de colaboradores se renova. A mesma competência, dedicação e profissionalismo da CCR continuam na Motiva, com fôlego ampliado para continuar liderando nosso setor e gerando valor sustentável.",
+    imageUrl: "./public/motiva.png",
+    link: "https://www.motiva.com.br/",
   },
   {
     id: 3,

@@ -4,8 +4,6 @@ import { fetchServicesData } from "../mockData";
 
 function Servicos() {
   const [services, setServices] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -19,22 +17,10 @@ function Servicos() {
       .finally(() => setLoading(false));
   }, []);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? services.length - 1 : prev - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) =>
-      prev === services.length - 1 ? 0 : prev + 1
-    );
-  };
-
   if (loading) {
     return (
       <section id="servicos">
-        <h2>Serviços</h2>
+        <h2>Onde já trabalhamos</h2>
         <p>Carregando serviços...</p>
       </section>
     );
@@ -43,7 +29,7 @@ function Servicos() {
   if (error) {
     return (
       <section id="servicos">
-        <h2>Serviços</h2>
+        <h2>Onde já trabalhamos</h2>
         <p style={{ color: "red" }}>
           Erro ao carregar serviços: {error.toString()}
         </p>
@@ -54,52 +40,67 @@ function Servicos() {
   if (!services.length) {
     return (
       <section id="servicos">
-        <h2>Serviços</h2>
+        <h2>Onde já trabalhamos</h2>
         <p>Nenhum serviço cadastrado ainda.</p>
       </section>
     );
   }
 
-  const currentService = services[currentIndex];
-
   return (
     <section id="servicos">
       <h2>Onde já trabalhamos</h2>
 
-      <div className="carousel">
-        <button type="button" onClick={handlePrev}>
-          ◀
-        </button>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "1.5rem",
+          marginTop: "1rem",
+        }}
+      >
+        {services.map((service) => (
+          <a
+            key={service.id}
+            href={service.link}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              flex: "1 1 calc(33.333% - 1.5rem)", // até 3 por linha
+              minWidth: "220px",
+              maxWidth: "320px",
+              textDecoration: "none",
+              border: "1px solid #ddd",
+              borderRadius: "8px",
+              padding: "1rem",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
+            }}
+          >
+            {service.imageUrl && (
+              <img
+                src={service.imageUrl}
+                alt={service.name}
+                style={{
+                  width: "100%",
+                  height: "160px",
+                  objectFit: "cover",
+                  borderRadius: "6px",
+                  marginBottom: "0.75rem",
+                }}
+              />
+            )}
 
-        <a
-          href={currentService.link}
-          target="_blank"
-          rel="noreferrer"
-          className="carousel-item"
-        >
-          {currentService.imageUrl && (
-            <img
-              src={currentService.imageUrl}
-              alt={currentService.name}
-              style={{ maxWidth: "300px", display: "block" }}
-            />
-          )}
+            <h3 style={{ margin: "0 0 0.5rem 0", color: "#222" }}>
+              {service.name}
+            </h3>
 
-          <h3>{currentService.name}</h3>
-
-          {currentService.description && <p>{currentService.description}</p>}
-
-          <small>Clique para saber mais</small>
-        </a>
-
-        <button type="button" onClick={handleNext}>
-          ▶
-        </button>
+            {service.description && (
+              <p style={{ margin: 0, color: "#555", fontSize: "0.9rem" }}>
+                {service.description}
+              </p>
+            )}
+          </a>
+        ))}
       </div>
-
-      <p>
-        {currentIndex + 1} / {services.length}
-      </p>
     </section>
   );
 }
