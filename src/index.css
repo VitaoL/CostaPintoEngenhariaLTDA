@@ -66,3 +66,81 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Splash com fade-in */
+.splash-container {
+  opacity: 0;
+  animation: splashFadeIn 0.6s forwards;
+}
+
+@keyframes splashFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Texto piscando no splash */
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.blink-text {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: blink 1s infinite;
+}
+.app-root {
+  position: relative;
+}
+
+/* Splash por cima de tudo */
+.splash-overlay {
+  position: fixed;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  color: #10222f;
+  opacity: 1;
+  transition: opacity 0.6s ease; /* controla a suavidade da saída */
+}
+
+/* Quando começa a esconder */
+.splash-overlay--hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Texto piscando */
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.blink-text {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: blink 1s infinite;
+}

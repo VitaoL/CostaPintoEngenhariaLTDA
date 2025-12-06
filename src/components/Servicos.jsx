@@ -82,7 +82,7 @@ function Servicos() {
                 style={{
                   width: "100%",
                   height: "160px",
-                  objectFit: "cover",
+                  objectFit: "contain",
                   borderRadius: "6px",
                   marginBottom: "0.75rem",
                 }}

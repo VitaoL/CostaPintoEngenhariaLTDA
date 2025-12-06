@@ -5,9 +5,10 @@ import { fetchHeaderData, fetchEnterpriseData } from "../mockData";
 function Header() {
   const [items, setItems] = useState([]);
   const [enterprise, setEnterprise] = useState(null);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     Promise.all([fetchHeaderData(), fetchEnterpriseData()])
@@ -24,41 +25,69 @@ function Header() {
       });
   }, []);
 
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
   if (loading) {
     return (
-      <header>
-        <h2>Carregando empresa...</h2>
-        <nav>
-          <span>Carregando menu...</span>
-        </nav>
+      <header className="site-header">
+        <div className="header-content">
+          <div className="header-left">
+            <div className="logo-placeholder" />
+            <span className="company-name">Carregando...</span>
+          </div>
+        </div>
       </header>
     );
   }
 
   if (error) {
     return (
-      <header>
-        <h2>Não foi possível carregar os dados da empresa</h2>
-        <nav>
-          <span style={{ color: "red" }}>
-            Erro: {error.toString()}
-          </span>
-        </nav>
+      <header className="site-header">
+        <div className="header-content">
+          <div className="header-left">
+            <div className="logo-placeholder" />
+            <span className="company-name">
+              Erro ao carregar: {error.toString()}
+            </span>
+          </div>
+        </div>
       </header>
     );
   }
 
   return (
-    <header>
-      <h2>{enterprise?.name}</h2>
+    <header className="site-header">
+      <div className="header-content">
+        <div className="header-left">
+          <img
+            src="/Logo_Costa_Pinto_Engenharia.png"
+            alt="Logo Costa Pinto Engenharia"
+            className="header-logo"
+          />
+          <span className="company-name">
+            {enterprise?.name || "Costa Pinto Engenharia LTDA."}
+          </span>
+        </div>
 
-      <nav>
-        {items.map((item) => (
-          <a key={item.link} href={item.link}>
-            {item.name}
-          </a>
-        ))}
-      </nav>
+        {/* Botão hamburguer (mobile) */}
+        <button
+          className="menu-toggle"
+          type="button"
+          onClick={toggleMenu}
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+
+        {/* Menu desktop + mobile */}
+        <nav className={`header-nav ${menuOpen ? "open" : ""}`}>
+          {items.map((item) => (
+            <a key={item.link} href={item.link} onClick={() => setMenuOpen(false)}>
+              {item.name}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }
