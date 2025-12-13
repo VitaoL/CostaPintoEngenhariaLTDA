@@ -1,16 +1,19 @@
 // src/components/Hero.jsx
 import { useEffect, useState } from "react";
-import { fetchEnterpriseData } from "../mockData";
+import { fetchEnterpriseData, fetchHeroCoverData } from "../mockData";
 
 function Hero() {
   const [enterprise, setEnterprise] = useState(null);
+  const [cover, setCover] = useState(null);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetchEnterpriseData()
-      .then((enterpriseData) => {
+    Promise.all([fetchEnterpriseData(), fetchHeroCoverData()])
+      .then(([enterpriseData, coverData]) => {
         setEnterprise(enterpriseData);
+        setCover(coverData);
       })
       .catch((err) => {
         console.error(err);
@@ -42,8 +45,19 @@ function Hero() {
       </section>
     );
   }
+
+  const backgroundImage = cover?.imageUrl
+    ? `url(${cover.imageUrl})`
+    : "none";
+
+  // src/components/Hero.jsx (parte final)
   return (
-    <section id="inicio" className="hero-section">
+    <section
+      id="inicio"
+      className="hero-section"
+      style={{ backgroundImage }}
+    >
+      {/* overlay só pro texto principal */}
       <div className="hero-overlay">
         <div className="hero-content">
           <h1>{enterprise.name}</h1>
@@ -60,13 +74,16 @@ function Hero() {
             Saiba Mais
           </button>
         </div>
-
-        <div className="hero-caption">
-          Aeroporto Internacional Afonso Pena – obra executada por nós em 2000
-        </div>
       </div>
+
+      {cover?.caption && (
+        <div className="hero-caption hero-caption-bottom">
+          {cover.caption}
+        </div>
+      )}
     </section>
   );
+
 }
 
 export default Hero;

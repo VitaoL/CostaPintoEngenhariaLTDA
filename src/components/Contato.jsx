@@ -19,25 +19,33 @@ function Contato() {
 
   if (loading) {
     return (
-      <section id="contato">
-        <h2>Contato</h2>
-        <p>Carregando informações de contato...</p>
+      <section id="contato" className="section-contato">
+        <div className="section-contato-inner">
+          <header className="section-contato-header">
+            <h2>Contato</h2>
+            <p>Carregando informações de contato...</p>
+          </header>
+        </div>
       </section>
     );
   }
 
   if (error) {
     return (
-      <section id="contato">
-        <h2>Contato</h2>
-        <p style={{ color: "red" }}>
-          Erro ao carregar contato: {error.toString()}
-        </p>
+      <section id="contato" className="section-contato">
+        <div className="section-contato-inner">
+          <header className="section-contato-header">
+            <h2>Contato</h2>
+            <p style={{ color: "#b91c1c" }}>
+              Erro ao carregar contato: {error.toString()}
+            </p>
+          </header>
+        </div>
       </section>
     );
   }
 
-  // se você colocou whatsappNumber no mockData:
+  // se quiser, pode colocar isso direto no mockData como whatsappNumber
   const whatsappNumber = enterprise.whatsappNumber || "5531988884422";
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -45,36 +53,61 @@ function Contato() {
   )}`;
 
   return (
-    <section id="contato">
-      <h2>Contato</h2>
+    <section id="contato" className="section-contato">
+      <div className="section-contato-inner">
+        <header className="section-contato-header">
+          <h2>Contato</h2>
+          <p>
+            Entre em contato para discutir propostas técnicas, apoio em
+            licitações ou dúvidas sobre os serviços de engenharia.
+          </p>
+        </header>
 
-      <p>
-        <strong>Telefone:</strong> {enterprise.phoneNumber}
-      </p>
-      <p>
-        <strong>E-mail:</strong>{" "}
-        <a href={`mailto:${enterprise.contactEmail}`}>
-          {enterprise.contactEmail}
-        </a>
-      </p>
-      <p>
-        <strong>Endereço:</strong> {enterprise.address}
-      </p>
+        <div className="contact-grid">
+          {/* Bloco com dados de contato */}
+          <div className="contact-card">
+            <h3>Dados da empresa</h3>
 
-      <button
-        type="button"
-        onClick={() => window.open(whatsappLink, "_blank")}
-        style={{
-          marginTop: "1rem",
-          padding: "0.75rem 1.5rem",
-          borderRadius: "999px",
-          border: "none",
-          cursor: "pointer",
-          fontWeight: "bold",
-        }}
-      >
-        Falar no WhatsApp
-      </button>
+            <p>
+              <strong>Telefone:</strong> {enterprise.phoneNumber}
+            </p>
+            <p>
+              <strong>E-mail:</strong>{" "}
+              <a href={`mailto:${enterprise.contactEmail}`}>
+                {enterprise.contactEmail}
+              </a>
+            </p>
+            {/* <p>
+              <strong>Endereço:</strong> {enterprise.address}
+            </p> */}
+          </div>
+
+          {/* Bloco com ações (WhatsApp) */}
+          <div className="contact-actions">
+            <p className="contact-highlight">
+              Atendimento preferencial via WhatsApp.
+            </p>
+
+            <button
+              type="button"
+              className="whatsapp-button"
+              onClick={() => window.open(whatsappLink, "_blank")}
+            >
+              <img
+                src="/whats.jpg"
+                alt="WhatsApp"
+                className="whatsapp-icon"
+              />
+              Falar no WhatsApp
+            </button>
+
+            <p className="contact-note">
+              Clique no botão para iniciar a conversa diretamente com a Costa
+              Pinto Engenharia LTDA.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

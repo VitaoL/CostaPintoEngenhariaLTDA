@@ -46,7 +46,7 @@ export const servicesData = [
     name: "Vale S.A.",
     description:
       "Uma das maiores mineradoras do mundo, referência na produção de minério de ferro e logística.",
-    imageUrl: "public/VALE.png",
+    imageUrl: "/VALE.png",
     link: "https://vale.com/pt",
   },
   {
@@ -54,7 +54,7 @@ export const servicesData = [
     name: "Motiva (antiga CCR)",
     description:
       "Grupo de infraestrutura e mobilidade que atua em concessões de rodovias, mobilidade urbana e aeroportos.",
-    imageUrl: "public/motiva.png",
+    imageUrl: "/motiva.png",
     link: "https://www.motiva.com.br/",
   },
   {
@@ -62,7 +62,7 @@ export const servicesData = [
     name: "Albras Alumínio Brasileiro S.A.",
     description:
       "Produtora de alumínio primário, com forte atuação no mercado nacional e internacional.",
-    imageUrl: "public/albras.jpeg",
+    imageUrl: "/albras.jpeg",
     link: "https://www.albras.com.br/",
   },
   {
@@ -70,7 +70,7 @@ export const servicesData = [
     name: "AngloGold Ashanti",
     description:
       "Empresa global de mineração de ouro, com operações e projetos em diversos países.",
-    imageUrl: "public/anglo.jpeg",
+    imageUrl: "/anglo.jpeg",
     link: "https://www.anglogoldashanti.com/",
   },
   {
@@ -78,7 +78,7 @@ export const servicesData = [
     name: "Concremat Engenharia e Tecnologia",
     description:
       "Grupo de engenharia que atua em projetos, consultoria e gerenciamento de obras de infraestrutura.",
-    imageUrl: "public/CONCREMAT.png",
+    imageUrl: "/CONCREMAT.png",
     link: "https://www.concremat.com.br/",
   },
   {
@@ -86,7 +86,7 @@ export const servicesData = [
     name: "CSN – Companhia Siderúrgica Nacional",
     description:
       "Uma das maiores siderúrgicas do Brasil, com atuação em aço, mineração, cimento e logística.",
-    imageUrl: "public/CSN.png",
+    imageUrl: "/CSN.png",
     link: "https://www.csn.com.br/",
   },
   {
@@ -94,7 +94,7 @@ export const servicesData = [
     name: "EcoRodovias",
     description:
       "Empresa de concessões rodoviárias e logística integrada, responsável por importantes corredores viários.",
-    imageUrl: "public/EcoRodovias.png",
+    imageUrl: "/EcoRodovias.png",
     link: "https://www.ecorodovias.com.br/",
   },
   {
@@ -102,7 +102,7 @@ export const servicesData = [
     name: "Everest Empreendimentos",
     description:
       "Empresa do setor de empreendimentos e construção, com atuação em projetos imobiliários e de infraestrutura.",
-    imageUrl: "public/everest.jpeg",
+    imageUrl: "/everest.jpeg",
     link: "https://www.everestempreendimentos.com/",
   },
   {
@@ -110,7 +110,7 @@ export const servicesData = [
     name: "Rumo",
     description:
       "Operadora logística com foco em ferrovias, terminais e portos, integrando o escoamento da produção em larga escala.",
-    imageUrl: "public/Rumo.png",
+    imageUrl: "/Rumo.png",
     link: "https://www.rumolog.com/",
   },
   {
@@ -118,14 +118,14 @@ export const servicesData = [
     name: "Consórcio Minas Mais",
     description:
       "Consórcio ligado a projetos de mineração e infraestrutura, com participação da Gerdau em empreendimentos estratégicos.",
-    imageUrl: "public/MINASMAIS.jpeg", // você ajusta o nome do arquivo
+    imageUrl: "/MINASMAIS.jpeg", // você ajusta o nome do arquivo
     link: "#https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/consorciominasgerais/&ved=2ahUKEwjr9uyjtamRAxUsrZUCHfkINd4QFnoECBgQAQ&usg=AOvVaw3E-2xMPtIKjfhL4MpXD-3m", // coloca o link oficial se tiver
   }, {
     id: 11,
     name: "Gerdau",
     description:
       "Uma das maiores produtoras de aço das Américas, com forte presença em construção civil, indústria e infraestrutura.",
-    imageUrl: "public/gerdau.png", // você ajusta o nome/caminho do arquivo
+    imageUrl: "/gerdau.png", // você ajusta o nome/caminho do arquivo
     link: "https://www2.gerdau.com/", // se quiser, pode usar "#"
   },
 
@@ -195,9 +195,7 @@ export function fetchHeaderData() {
     }, 500);
   });
 }
-// === PORTFÓLIO / ENTREGÁVEIS ===
 
-// Lista inspirada naquele quadro de anexos do documento
 export const deliverablesData = [
   {
     id: 1,
@@ -275,7 +273,6 @@ export function fetchDeliverablesData() {
   });
 }
 
-// se quiser tratar TIPO DE OBRAS como “API” também:
 export function fetchServiceTypesData() {
   return new Promise((resolve, reject) => {
     const success = true;
@@ -289,4 +286,26 @@ export function fetchServiceTypesData() {
     }, 300);
   });
 }
+
+
+export const heroCoverData = {
+  imageUrl: "/aeroportoAfonsoPena.jpg",
+  caption:
+    "Aeroporto Internacional Afonso Pena – serviços de engenharia prestados para a Andrade Gutierrez em 1994, reforçando a experiência e a confiança na Costa Pinto Engenharia LTDA.",
+};
+
+export function fetchHeroCoverData() {
+  return new Promise((resolve, reject) => {
+    const success = true; // coloca false pra testar erro
+
+    setTimeout(() => {
+      if (!success) {
+        reject("Falha ao carregar capa (hero)");
+      } else {
+        resolve(heroCoverData);
+      }
+    }, 300);
+  });
+}
+
 

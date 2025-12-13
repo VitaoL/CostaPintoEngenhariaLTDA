@@ -12,6 +12,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#inicio,
+#sobre,
+#servicos,
+#portfolio,
+#contato {
+  scroll-margin-top: 80px;
+}
+
 
 a {
   font-weight: 500;

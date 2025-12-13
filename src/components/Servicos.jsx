@@ -19,87 +19,85 @@ function Servicos() {
 
   if (loading) {
     return (
-      <section id="servicos">
-        <h2>Onde já trabalhamos</h2>
-        <p>Carregando serviços...</p>
+      <section id="servicos" className="section-servicos">
+        <div className="section-servicos-inner">
+          <header className="section-servicos-header">
+            <h2>Onde já trabalhamos</h2>
+            <p>Carregando informações das obras e empresas parceiras...</p>
+          </header>
+        </div>
       </section>
     );
   }
 
   if (error) {
     return (
-      <section id="servicos">
-        <h2>Onde já trabalhamos</h2>
-        <p style={{ color: "red" }}>
-          Erro ao carregar serviços: {error.toString()}
-        </p>
+      <section id="servicos" className="section-servicos">
+        <div className="section-servicos-inner">
+          <header className="section-servicos-header">
+            <h2>Onde já trabalhamos</h2>
+            <p style={{ color: "#fecaca" }}>
+              Erro ao carregar serviços: {error.toString()}
+            </p>
+          </header>
+        </div>
       </section>
     );
   }
 
   if (!services.length) {
     return (
-      <section id="servicos">
-        <h2>Onde já trabalhamos</h2>
-        <p>Nenhum serviço cadastrado ainda.</p>
+      <section id="servicos" className="section-servicos">
+        <div className="section-servicos-inner">
+          <header className="section-servicos-header">
+            <h2>Onde já trabalhamos</h2>
+            <p>Ainda não há obras cadastradas no sistema.</p>
+          </header>
+        </div>
       </section>
     );
   }
 
   return (
-    <section id="servicos">
-      <h2>Onde já trabalhamos</h2>
+    <section id="servicos" className="section-servicos">
+      <div className="section-servicos-inner">
+        <header className="section-servicos-header">
+          <h2>Onde já trabalhamos</h2>
+          <p>
+            Algumas das empresas e obras em que a Costa Pinto Engenharia LTDA
+            prestou serviços de engenharia, consultoria e apoio técnico.
+          </p>
+        </header>
 
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "1.5rem",
-          marginTop: "1rem",
-        }}
-      >
-        {services.map((service) => (
-          <a
-            key={service.id}
-            href={service.link}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              flex: "1 1 calc(33.333% - 1.5rem)", // até 3 por linha
-              minWidth: "220px",
-              maxWidth: "320px",
-              textDecoration: "none",
-              border: "1px solid #ddd",
-              borderRadius: "8px",
-              padding: "1rem",
-              boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
-            }}
-          >
-            {service.imageUrl && (
-              <img
-                src={service.imageUrl}
-                alt={service.name}
-                style={{
-                  width: "100%",
-                  height: "160px",
-                  objectFit: "contain",
-                  borderRadius: "6px",
-                  marginBottom: "0.75rem",
-                }}
-              />
-            )}
+        <div className="services-list">
+          {services.map((service) => (
+            <a
+              key={service.id}
+              href={service.link}
+              target="_blank"
+              rel="noreferrer"
+              className="service-card"
+            >
+              {service.imageUrl && (
+                <div className="service-image-wrapper">
+                  <img
+                    src={service.imageUrl}
+                    alt={service.name}
+                    className="service-image"
+                  />
+                </div>
+              )}
 
-            <h3 style={{ margin: "0 0 0.5rem 0", color: "#222" }}>
-              {service.name}
-            </h3>
+              <h3 className="service-title">{service.name}</h3>
 
-            {service.description && (
-              <p style={{ margin: 0, color: "#555", fontSize: "0.9rem" }}>
-                {service.description}
-              </p>
-            )}
-          </a>
-        ))}
+              {/* {service.description && (
+                <p className="service-description">
+                  {service.description}
+                </p>
+              )} */}
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
