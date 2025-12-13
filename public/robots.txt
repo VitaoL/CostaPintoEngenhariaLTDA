@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://costa-pinto-engenharia-ltda.vercel.app/sitemap.xml
