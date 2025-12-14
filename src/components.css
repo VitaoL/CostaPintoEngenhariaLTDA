@@ -339,19 +339,30 @@
 
 /* RESPONSIVO */
 
-@media (max-width: 768px) {
-  .section-servicos {
-    padding: 2.5rem 1rem 3rem;
+/* MOBILE: 3 logos por linha, menores */
+@media (max-width: 600px) {
+  .services-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 
-  .section-servicos-header h2 {
-    font-size: 1.6rem;
+  .service-card {
+    padding: 0.4rem;
+    border-radius: 8px;
   }
 
-  .section-servicos-header p {
-    font-size: 0.9rem;
+  .service-image-wrapper {
+    height: 55px;              
+    margin-bottom: 0.35rem;
+    border-radius: 4px;
+  }
+
+  .service-title {
+    font-size: 0.72rem;        
+    text-align: center;
   }
 }
+
 
 /* ====== PORTFÓLIO E ENTREGÁVEIS ====== */
 
