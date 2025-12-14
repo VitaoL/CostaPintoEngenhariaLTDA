@@ -1,6 +1,6 @@
-// src/mockData.js
-
-// TIPOS de serviço (se você quiser usar em outra seção, tipo "O que fazemos")
+// ==============================
+// Serviços - Tipos de obras (usados no Portfólio / chips de tipos de obras)
+// ==============================
 export const serviceTypes = [
   {
     id: 1,
@@ -40,6 +40,10 @@ export const serviceTypes = [
   },
 ];
 
+
+// ==============================
+// Onde já trabalhamos - Clientes / empresas parceiras (cards da seção Serviços)
+// ==============================
 export const servicesData = [
   {
     id: 1,
@@ -120,7 +124,8 @@ export const servicesData = [
       "Consórcio ligado a projetos de mineração e infraestrutura, com participação da Gerdau em empreendimentos estratégicos.",
     imageUrl: "/MINASMAIS.jpeg", // você ajusta o nome do arquivo
     link: "#https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/consorciominasgerais/&ved=2ahUKEwjr9uyjtamRAxUsrZUCHfkINd4QFnoECBgQAQ&usg=AOvVaw3E-2xMPtIKjfhL4MpXD-3m", // coloca o link oficial se tiver
-  }, {
+  },
+  {
     id: 11,
     name: "Gerdau",
     description:
@@ -128,12 +133,10 @@ export const servicesData = [
     imageUrl: "/gerdau.png", // você ajusta o nome/caminho do arquivo
     link: "https://www2.gerdau.com/", // se quiser, pode usar "#"
   },
-
-
-
 ];
 
 
+// Fake API: lista de empresas / clientes para "Onde já trabalhamos"
 export function fetchServicesData() {
   return new Promise((resolve, reject) => {
     const success = true;
@@ -148,6 +151,10 @@ export function fetchServicesData() {
   });
 }
 
+
+// ==============================
+// Sobre - Dados da empresa (usados em várias seções)
+// ==============================
 export const enterpriseData = {
   name: "Costa Pinto Engenharia LTDA",
   shortDescription: "Prestação de serviços de Proposta Técnica e Engenharia Civil.",
@@ -158,10 +165,11 @@ export const enterpriseData = {
   representative: "Fernando Guimarães Costa Pinto",
   contactEmail: "fernandoguimaraesc811@gmail.com",
   phoneNumber: "(31) 98888-4422",
-  whatsappNumber: "5531988884422"
-
+  whatsappNumber: "5531988884422",
 };
 
+
+// Fake API: dados principais da empresa (Hero, Contato, etc.)
 export function fetchEnterpriseData() {
   return new Promise((resolve, reject) => {
     const success = true;
@@ -176,6 +184,10 @@ export function fetchEnterpriseData() {
   });
 }
 
+
+// ==============================
+// Header - Menu principal
+// ==============================
 export function fetchHeaderData() {
   return new Promise((resolve, reject) => {
     const success = true;
@@ -196,6 +208,10 @@ export function fetchHeaderData() {
   });
 }
 
+
+// ==============================
+// Portfólio - Entregáveis (Anexos, documentos técnicos)
+// ==============================
 export const deliverablesData = [
   {
     id: 1,
@@ -259,6 +275,8 @@ export const deliverablesData = [
   },
 ];
 
+
+// Fake API: entregáveis (usados na seção Portfólio)
 export function fetchDeliverablesData() {
   return new Promise((resolve, reject) => {
     const success = true;
@@ -273,6 +291,8 @@ export function fetchDeliverablesData() {
   });
 }
 
+
+// Fake API: tipos de obras (usados como chips na seção Portfólio)
 export function fetchServiceTypesData() {
   return new Promise((resolve, reject) => {
     const success = true;
@@ -288,12 +308,17 @@ export function fetchServiceTypesData() {
 }
 
 
+// ==============================
+// Hero - Capa da página inicial (imagem de fundo e legenda)
+// ==============================
 export const heroCoverData = {
   imageUrl: "/aeroportoAfonsoPena.jpg",
   caption:
     "Aeroporto Internacional Afonso Pena – serviços de engenharia prestados para a Andrade Gutierrez em 1994, reforçando a experiência e a confiança na Costa Pinto Engenharia LTDA.",
 };
 
+
+// Fake API: dados da capa (Hero)
 export function fetchHeroCoverData() {
   return new Promise((resolve, reject) => {
     const success = true; // coloca false pra testar erro
@@ -309,3 +334,90 @@ export function fetchHeroCoverData() {
 }
 
 
+// ==============================
+// Sobre - Princípios / textos conceituais da empresa
+// ==============================
+export const aboutHighlights = {
+  whoWeAre:
+    "Empresa dedicada à elaboração de propostas técnicas, planejamento e apoio em engenharia civil, com foco em obras de infraestrutura, saneamento, mineração e empreendimentos de grande porte.",
+
+  whatWeBelieve:
+    "Acreditamos que uma proposta técnica bem estruturada é a base para uma obra segura, eficiente e com boa previsibilidade de custos e prazos.",
+
+  partnershipFocus:
+    "Buscamos parcerias em que possamos somar experiência técnica, organização e confiabilidade aos projetos de nossos clientes.",
+};
+
+
+// ==============================
+// Sobre - Pilares de atuação (valores / forma de trabalho)
+// ==============================
+export const aboutPillars = [
+  {
+    id: 1,
+    title: "Compromisso com o resultado",
+    text: "Propostas técnicas alinhadas ao escopo, prazos e critérios de contratação definidos em edital ou termo de referência.",
+  },
+  {
+    id: 2,
+    title: "Responsabilidade e segurança",
+    text: "Atenção constante às premissas de segurança, meio ambiente e qualidade, respeitando normas e boas práticas de engenharia.",
+  },
+  {
+    id: 3,
+    title: "Clareza técnica",
+    text: "Documentos objetivos, com premissas, metodologias e critérios de medição claramente descritos para facilitar a análise do contratante.",
+  },
+  {
+    id: 4,
+    title: "Parceria de longo prazo",
+    text: "Atuação próxima ao cliente, revisando e ajustando estudos e documentos conforme a necessidade de cada empreendimento.",
+  },
+];
+
+
+// ==============================
+// Sobre - Fake API (combina dados cadastrais + princípios + pilares)
+// ==============================
+export function fetchAboutData() {
+  return new Promise((resolve, reject) => {
+    const success = true; // coloca false se quiser testar erro
+
+    setTimeout(() => {
+      if (!success) {
+        reject("Falha ao carregar dados da seção Sobre");
+      } else {
+        resolve({
+          enterprise: enterpriseData,
+          highlights: aboutHighlights,
+          pillars: aboutPillars,
+        });
+      }
+    }, 350);
+  });
+}
+
+// ==============================
+// Sobre - Foto em destaque (imagem com autoridade / obra)
+// ==============================
+export const aboutPhotoHighlight = {
+  imageUrl: "/ImagemComAlguem.png", 
+  alt: "Registro com o governador Romeu Zema em visita às obras do metrô de Belo Horizonte em 2024",
+  caption:
+    "Registro com o governador Romeu Zema em visita às obras do metrô de Belo Horizonte (2024), reforçando a participação da Costa Pinto Engenharia LTDA em projetos estruturantes de mobilidade urbana.",
+};
+
+// Fake API: foto de destaque usada na seção Sobre
+export function fetchAboutPhotoHighlight() {
+  return new Promise((resolve, reject) => {
+    const success = true; // coloca false se quiser testar erro
+
+    setTimeout(() => {
+      if (!success) {
+        reject("Falha ao carregar foto de destaque da seção Sobre");
+      } else {
+        resolve(aboutPhotoHighlight);
+      }
+    }, 300);
+  });
+}
