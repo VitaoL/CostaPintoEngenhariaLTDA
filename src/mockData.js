@@ -1,3 +1,5 @@
+// src/mockData.js
+
 // ==============================
 // Serviços - Tipos de obras (usados no Portfólio / chips de tipos de obras)
 // ==============================
@@ -42,7 +44,8 @@ export const serviceTypes = [
 
 
 // ==============================
-// Onde já trabalhamos - Clientes / empresas parceiras (cards da seção Serviços)
+// Empresas ligadas à trajetória profissional do responsável técnico
+// (usadas nos cards da seção "Experiência / Onde já atuamos")
 // ==============================
 export const servicesData = [
   {
@@ -122,28 +125,28 @@ export const servicesData = [
     name: "Consórcio Minas Mais",
     description:
       "Consórcio ligado a projetos de mineração e infraestrutura, com participação da Gerdau em empreendimentos estratégicos.",
-    imageUrl: "/MINASMAIS.jpeg", // você ajusta o nome do arquivo
-    link: "#https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/consorciominasgerais/&ved=2ahUKEwjr9uyjtamRAxUsrZUCHfkINd4QFnoECBgQAQ&usg=AOvVaw3E-2xMPtIKjfhL4MpXD-3m", // coloca o link oficial se tiver
+    imageUrl: "/MINASMAIS.jpeg",
+    link: "https://www.instagram.com/consorciominasgerais/",
   },
   {
     id: 11,
     name: "Gerdau",
     description:
       "Uma das maiores produtoras de aço das Américas, com forte presença em construção civil, indústria e infraestrutura.",
-    imageUrl: "/gerdau.png", // você ajusta o nome/caminho do arquivo
-    link: "https://www2.gerdau.com/", // se quiser, pode usar "#"
+    imageUrl: "/gerdau.png",
+    link: "https://www2.gerdau.com/",
   },
 ];
 
 
-// Fake API: lista de empresas / clientes para "Onde já trabalhamos"
+// Fake API: lista de empresas / experiência profissional
 export function fetchServicesData() {
   return new Promise((resolve, reject) => {
     const success = true;
 
     setTimeout(() => {
       if (!success) {
-        reject("Falha ao carregar serviços");
+        reject("Falha ao carregar experiência em empresas");
       } else {
         resolve(servicesData);
       }
@@ -301,7 +304,7 @@ export function fetchServiceTypesData() {
       if (!success) {
         reject("Falha ao carregar tipos de obras");
       } else {
-        resolve(serviceTypes); // já definidos lá em cima
+        resolve(serviceTypes);
       }
     }, 300);
   });
@@ -314,7 +317,7 @@ export function fetchServiceTypesData() {
 export const heroCoverData = {
   imageUrl: "/aeroportoAfonsoPena.jpg",
   caption:
-    "Aeroporto Internacional Afonso Pena – serviços de engenharia prestados para a Andrade Gutierrez em 1994, reforçando a experiência e a confiança na Costa Pinto Engenharia LTDA.",
+    "Aeroporto Internacional Afonso Pena – participação do Eng. Fernando Guimarães Costa Pinto em serviços de engenharia em empreendimento da Andrade Gutierrez (1994), experiência que hoje compõe o histórico técnico da Costa Pinto Engenharia LTDA.",
 };
 
 
@@ -397,15 +400,17 @@ export function fetchAboutData() {
   });
 }
 
+
 // ==============================
 // Sobre - Foto em destaque (imagem com autoridade / obra)
 // ==============================
 export const aboutPhotoHighlight = {
-  imageUrl: "/ImagemComAlguem.png", 
-  alt: "Registro com o governador Romeu Zema em visita às obras do metrô de Belo Horizonte em 2024",
+  imageUrl: "/ImagemComAlguem.png",
+  alt: "Registro do Eng. Fernando Guimarães Costa Pinto com o governador Romeu Zema em visita às obras do metrô de Belo Horizonte em 2024",
   caption:
-    "Registro com o governador Romeu Zema em visita às obras do metrô de Belo Horizonte (2024), reforçando a participação da Costa Pinto Engenharia LTDA em projetos estruturantes de mobilidade urbana.",
+    "Registro do Eng. Fernando Guimarães Costa Pinto ao lado do governador Romeu Zema, em visita às obras do metrô de Belo Horizonte (2024), ilustrando a experiência profissional que hoje dá suporte às atividades da Costa Pinto Engenharia LTDA.",
 };
+
 
 // Fake API: foto de destaque usada na seção Sobre
 export function fetchAboutPhotoHighlight() {
