@@ -1,6 +1,6 @@
 // src/components/Contato.jsx
 import { useEffect, useState } from "react";
-import { fetchEnterpriseData } from "../mockData";
+import { fetchEnterpriseData } from "../mocks";
 
 function Contato() {
   const [enterprise, setEnterprise] = useState(null);
@@ -45,7 +45,7 @@ function Contato() {
     );
   }
 
-  // se quiser, pode colocar isso direto no mockData como whatsappNumber
+  // se quiser, pode colocar isso direto no mock como whatsappNumber
   const whatsappNumber = enterprise.whatsappNumber || "5531988884422";
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(

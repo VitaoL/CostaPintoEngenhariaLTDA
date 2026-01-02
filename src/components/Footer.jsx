@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import { useEffect, useState } from "react";
-import { fetchEnterpriseData } from "../mockData";
+import { fetchEnterpriseData } from "../mocks";
 
 function Footer() {
   const [enterprise, setEnterprise] = useState(null);
@@ -21,15 +21,7 @@ function Footer() {
 
   if (loading) {
     return (
-      <footer
-        style={{
-          marginTop: "2rem",
-          padding: "1rem",
-          borderTop: "1px solid #ddd",
-          textAlign: "center",
-          fontSize: "0.85rem",
-        }}
-      >
+      <footer className="site-footer">
         Carregando rodapé...
       </footer>
     );
@@ -37,48 +29,31 @@ function Footer() {
 
   if (error) {
     return (
-      <footer
-        style={{
-          marginTop: "2rem",
-          padding: "1rem",
-          borderTop: "1px solid #ddd",
-          textAlign: "center",
-          fontSize: "0.85rem",
-          color: "red",
-        }}
-      >
+      <footer className="site-footer site-footer--error">
         Erro ao carregar rodapé: {error.toString()}
       </footer>
     );
   }
 
   return (
-    <footer
-      style={{
-        marginTop: "2rem",
-        padding: "1rem",
-        borderTop: "1px solid #ddd",
-        textAlign: "center",
-        fontSize: "0.85rem",
-      }}
-    >
-      <p style={{ margin: 0, fontWeight: "bold" }}>
+    <footer className="site-footer">
+      <p className="site-footer__name">
         {enterprise.name}
       </p>
 
       {enterprise.cnpj && (
-        <p style={{ margin: "0.15rem 0" }}>
+        <p className="site-footer__line">
           CNPJ: {enterprise.cnpj}
         </p>
       )}
 
       {enterprise.address && (
-        <p style={{ margin: "0.15rem 0" }}>
+        <p className="site-footer__line">
           {enterprise.address}
         </p>
       )}
 
-      <p style={{ margin: "0.4rem 0 0" }}>
+      <p className="site-footer__copyright">
         © {currentYear} {enterprise.name}. Todos os direitos reservados.
       </p>
     </footer>

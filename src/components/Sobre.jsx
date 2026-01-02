@@ -1,26 +1,22 @@
 // src/components/Sobre.jsx
 import { useEffect, useState } from "react";
-import {
-  fetchAboutData,
-  fetchAboutPhotoHighlight,
-} from "../mockData";
+import { fetchAboutData } from "../mocks";
 
 function Sobre() {
   const [enterprise, setEnterprise] = useState(null);
   const [highlights, setHighlights] = useState(null);
   const [pillars, setPillars] = useState([]);
-  const [photo, setPhoto] = useState(null);
-
+  const [audience, setAudience] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    Promise.all([fetchAboutData(), fetchAboutPhotoHighlight()])
-      .then(([aboutData, photoData]) => {
+    fetchAboutData()
+      .then((aboutData) => {
         setEnterprise(aboutData.enterprise);
         setHighlights(aboutData.highlights);
         setPillars(aboutData.pillars);
-        setPhoto(photoData);
+        setAudience(aboutData.audience || []);
       })
       .catch((err) => {
         console.error(err);
@@ -69,16 +65,6 @@ function Sobre() {
 
         {/* Layout em duas colunas */}
         <div className="sobre-layout">
-          {/* COLUNA ESQUERDA – IMAGEM + LEGENDA */}
-          {photo && (
-            <figure className="sobre-photo-card">
-              <img src={photo.imageUrl} alt={photo.alt} />
-              <figcaption className="sobre-photo-caption">
-                {photo.caption}
-              </figcaption>
-            </figure>
-          )}
-
           {/* COLUNA DIREITA – TEXTO + DADOS DA EMPRESA */}
           <div className="sobre-text-block">
             <h3>Em que acreditamos</h3>
@@ -96,6 +82,18 @@ function Sobre() {
                 </li>
               ))}
             </ul>
+
+            <div className="sobre-clientes">
+              <h3>Para quem prestamos serviços</h3>
+              <div className="sobre-clientes-grid">
+                {audience.map((item) => (
+                  <div key={item.id} className="sobre-cliente-card">
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <div className="sobre-dados-empresa">
               <h3>Dados da empresa</h3>
