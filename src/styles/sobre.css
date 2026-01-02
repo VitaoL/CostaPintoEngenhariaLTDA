@@ -1,0 +1,143 @@
+/* ========= SOBRE ========= */
+
+.section-sobre {
+  padding: 3rem 1rem 3.5rem;
+  background-color: #ffffff;
+}
+
+.section-sobre-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-sobre-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.section-sobre-header h2 {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+  color: #10222f;
+}
+
+.section-sobre-header p {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.sobre-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sobre-text-block h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.sobre-text-block p {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.sobre-pilares-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sobre-pilares-lista li {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 0.65rem 0.85rem;
+}
+
+.sobre-pilares-lista strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #111827;
+  margin-bottom: 0.15rem;
+}
+
+.sobre-pilares-lista span {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.sobre-clientes {
+  margin-bottom: 1.2rem;
+}
+
+.sobre-clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.sobre-cliente-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.sobre-cliente-card strong {
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.sobre-cliente-card span {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.sobre-dados-empresa {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sobre-dados-empresa p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.sobre-dados-empresa a {
+  color: #1d4ed8;
+}
+
+.sobre-dados-empresa a:hover {
+  color: #1e40af;
+}
+
+@media (max-width: 900px) {
+  .section-sobre {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .section-sobre-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-sobre-header p {
+    font-size: 0.9rem;
+  }
+
+  .sobre-body {
+    gap: 1.25rem;
+  }
+}

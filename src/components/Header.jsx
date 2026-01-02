@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import { useEffect, useState } from "react";
-import { fetchHeaderData, fetchEnterpriseData } from "../mockData";
+import { fetchHeaderData, fetchEnterpriseData } from "../mocks";
 
 function Header() {
   const [items, setItems] = useState([]);
