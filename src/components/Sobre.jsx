@@ -1,27 +1,21 @@
 // src/components/Sobre.jsx
 import { useEffect, useState } from "react";
-import {
-  fetchAboutData,
-  fetchAboutPhotoHighlight,
-} from "../mocks";
+import { fetchAboutData } from "../mocks";
 
 function Sobre() {
   const [enterprise, setEnterprise] = useState(null);
   const [highlights, setHighlights] = useState(null);
   const [pillars, setPillars] = useState([]);
   const [audience, setAudience] = useState([]);
-  const [photo, setPhoto] = useState(null);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    Promise.all([fetchAboutData(), fetchAboutPhotoHighlight()])
-      .then(([aboutData, photoData]) => {
+    fetchAboutData()
+      .then((aboutData) => {
         setEnterprise(aboutData.enterprise);
         setHighlights(aboutData.highlights);
         setPillars(aboutData.pillars);
-        setPhoto(false);
         setAudience(aboutData.audience || []);
       })
       .catch((err) => {
@@ -71,16 +65,6 @@ function Sobre() {
 
         {/* Layout em duas colunas */}
         <div className="sobre-layout">
-          {/* COLUNA ESQUERDA – IMAGEM + LEGENDA */}
-          {photo && (
-            <figure className="sobre-photo-card">
-              <img src={photo.imageUrl} alt={photo.alt} />
-              <figcaption className="sobre-photo-caption">
-                {photo.caption}
-              </figcaption>
-            </figure>
-          )}
-
           {/* COLUNA DIREITA – TEXTO + DADOS DA EMPRESA */}
           <div className="sobre-text-block">
             <h3>Em que acreditamos</h3>
