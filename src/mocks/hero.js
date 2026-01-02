@@ -1,7 +1,7 @@
 export const heroCoverData = {
-  images: ["/imagem1.png", "/imagem2.png", "/imagem3.png"],
+  imageUrl: "/aeroportoAfonsoPena.jpg",
   caption:
-    "Apresentação de obras e estudos técnicos que refletem o cuidado em cada proposta.",
+    "Experiência em obras de infraestrutura que inspira o cuidado da Costa Pinto Engenharia LTDA em cada proposta.",
 };
 
 export function fetchHeroCoverData() {
