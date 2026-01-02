@@ -1,6 +1,6 @@
 // src/components/Hero.jsx
 import { useEffect, useState } from "react";
-import { fetchEnterpriseData, fetchHeroCoverData } from "../mockData";
+import { fetchEnterpriseData, fetchHeroCoverData } from "../mocks";
 
 function Hero() {
   const [enterprise, setEnterprise] = useState(null);

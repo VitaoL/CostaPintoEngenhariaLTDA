@@ -1,0 +1,109 @@
+/* HEADER */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+}
+
+.company-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #10222f;
+}
+
+/* NAV links */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.header-nav a:hover {
+  color: #10222f;
+}
+
+/* Botão hamburguer (esconde no desktop) */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #10222f;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .header-left {
+    flex: 1;
+  }
+
+  .header-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .company-name {
+    font-size: 0.85rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    display: none;
+  }
+
+  .header-nav.open {
+    display: flex;
+  }
+}

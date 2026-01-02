@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import {
   fetchAboutData,
   fetchAboutPhotoHighlight,
-} from "../mockData";
+} from "../mocks";
 
 function Sobre() {
   const [enterprise, setEnterprise] = useState(null);
   const [highlights, setHighlights] = useState(null);
   const [pillars, setPillars] = useState([]);
+  const [audience, setAudience] = useState([]);
   const [photo, setPhoto] = useState(null);
 
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ function Sobre() {
         setHighlights(aboutData.highlights);
         setPillars(aboutData.pillars);
         setPhoto(photoData);
+        setAudience(aboutData.audience || []);
       })
       .catch((err) => {
         console.error(err);
@@ -96,6 +98,18 @@ function Sobre() {
                 </li>
               ))}
             </ul>
+
+            <div className="sobre-clientes">
+              <h3>Para quem prestamos serviços</h3>
+              <div className="sobre-clientes-grid">
+                {audience.map((item) => (
+                  <div key={item.id} className="sobre-cliente-card">
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <div className="sobre-dados-empresa">
               <h3>Dados da empresa</h3>

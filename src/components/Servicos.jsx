@@ -1,6 +1,6 @@
 // src/components/Servicos.jsx
 import { useEffect, useState } from "react";
-import { fetchServicesData } from "../mockData";
+import { fetchServicesData } from "../mocks";
 
 function Servicos() {
   const [services, setServices] = useState([]);
@@ -64,8 +64,8 @@ function Servicos() {
         <header className="section-servicos-header">
           <h2>Onde já trabalhamos</h2>
           <p>
-            Algumas das empresas e obras em que a Costa Pinto Engenharia LTDA
-            prestou serviços de engenharia, consultoria e apoio técnico.
+            Empresas que confiaram na Costa Pinto Engenharia LTDA para apoio
+            técnico, organização de propostas e acompanhamento de serviços.
           </p>
         </header>
 
