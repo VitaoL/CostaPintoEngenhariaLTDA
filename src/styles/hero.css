@@ -1,0 +1,159 @@
+/* HERO COM IMAGEM DE FUNDO */
+.hero-section {
+  position: relative;
+  min-height: 70vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #0b1722;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0 0 0.75rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 34, 47, 0.85) 0%,
+    rgba(16, 34, 47, 0.6) 45%,
+    rgba(16, 34, 47, 0) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+  color: #f5f5f5;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background-color: #f5f5f5;
+  color: #10222f;
+}
+
+.hero-button:hover {
+  opacity: 0.9;
+}
+
+/* LEGENDA NO FINAL DO BACKGROUND */
+.hero-caption-bottom {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  text-align: right;
+  color: #f9fafb;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.hero-collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.hero-collage-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hero-collage-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-collage-card.card-1 {
+  grid-column: 1 / -1;
+  min-height: 190px;
+}
+
+.hero-collage-card.card-2,
+.hero-collage-card.card-3 {
+  min-height: 140px;
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: 60vh;
+  }
+
+  .hero-overlay {
+    padding: 2.5rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-button {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-caption-bottom {
+    font-size: 0.7rem;
+    white-space: normal;
+    max-width: 100%;
+    right: 0.5rem;
+    left: 0.5rem;
+    text-align: center;
+    bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-collage {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-collage-card.card-1 {
+    grid-column: span 3;
+  }
+}

@@ -1,0 +1,29 @@
+/* ========= FOOTER ========= */
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+.site-footer--error {
+  color: #b91c1c;
+}
+
+.site-footer__name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.site-footer__line {
+  margin: 0.15rem 0;
+}
+
+.site-footer__copyright {
+  margin: 0.4rem 0 0;
+  color: #6b7280;
+}
