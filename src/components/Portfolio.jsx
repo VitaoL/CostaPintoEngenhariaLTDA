@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {
   fetchDeliverablesData,
   fetchServiceTypesData,
-} from "../mockData";
+} from "../mocks";
 
 function Portfolio() {
   const [deliverables, setDeliverables] = useState([]);
@@ -59,9 +59,10 @@ function Portfolio() {
         <header className="section-portfolio-header">
           <h2>Portfólio e Entregáveis</h2>
           <p>
-            A Costa Pinto Engenharia LTDA atua na elaboração de propostas
-            técnicas e documentos que estruturam a contratação e o
-            acompanhamento de grandes obras de engenharia.
+            Organizamos propostas técnicas e documentos que dão segurança à
+            contratação e ao acompanhamento de obras. Cada anexo é preparado
+            para facilitar a leitura do contratante e traduzir o escopo com
+            clareza.
           </p>
         </header>
 
