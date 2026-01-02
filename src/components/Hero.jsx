@@ -55,24 +55,38 @@ function Hero() {
     <section
       id="inicio"
       className="hero-section"
-      style={{ backgroundImage }}
+      style={{
+        backgroundImage: cover?.images?.length ? "none" : backgroundImage,
+      }}
     >
       {/* overlay só pro texto principal */}
       <div className="hero-overlay">
-        <div className="hero-content">
-          <h1>{enterprise.name}</h1>
-          <p>{enterprise.shortDescription}</p>
+        <div className="hero-layout">
+          <div className="hero-content">
+            <h1>{enterprise.name}</h1>
+            <p>{enterprise.shortDescription}</p>
 
-          <button
-            className="hero-button"
-            onClick={() =>
-              document
-                .getElementById("sobre")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Saiba Mais
-          </button>
+            <button
+              className="hero-button"
+              onClick={() =>
+                document
+                  .getElementById("sobre")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Saiba Mais
+            </button>
+          </div>
+
+          {cover?.images?.length && (
+            <div className="hero-collage" aria-label="Apresentação de projetos">
+              {cover.images.map((image, index) => (
+                <div key={image} className={`hero-collage-card card-${index + 1}`}>
+                  <img src={image} alt={`Projeto ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

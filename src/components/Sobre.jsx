@@ -21,7 +21,7 @@ function Sobre() {
         setEnterprise(aboutData.enterprise);
         setHighlights(aboutData.highlights);
         setPillars(aboutData.pillars);
-        setPhoto(photoData);
+        setPhoto(false);
         setAudience(aboutData.audience || []);
       })
       .catch((err) => {
