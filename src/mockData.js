@@ -1,5 +1,3 @@
-// src/mockData.js
-
 // ==============================
 // Serviços - Tipos de obras (usados no Portfólio / chips de tipos de obras)
 // ==============================
@@ -43,11 +41,77 @@ export const serviceTypes = [
 ];
 
 
-// ==============================
-// Empresas ligadas à trajetória profissional do responsável técnico
-// (usadas nos cards da seção "Experiência / Onde já atuamos")
-// ==============================
-export const servicesData = [
+// ================================================
+// Empresas de engenharia / construtoras
+// onde o Eng. Fernando já atuou diretamente
+// (empregadoras / contratantes intermediárias)
+// ================================================
+export const contractorCompaniesData = [
+  {
+    id: 1,
+    name: "Andrade Gutierrez",
+    description: "",
+    imageUrl: "/andrade.png",
+    link: "https://www.andradegutierrez.com.br/",
+  },
+  {
+    id: 2,
+    name: "Engenharia de Obras S.A.",
+    description: "",
+    imageUrl: "/engenhariadeobras.jpeg",
+    link: "",
+  },
+  {
+    id: 3,
+    name: "Aterpa",
+    description: "",
+    imageUrl: "/aterpa.png",
+    link: "",
+  },
+  {
+    id: 4,
+    name: "Cowan",
+    description: "",
+    imageUrl: "/cowan.jpeg",
+    link: "",
+  },
+  {
+    id: 5,
+    name: "Btec Construções",
+    description: "",
+    imageUrl: "/btec.jpeg",
+    link: "",
+  },
+  {
+    id: 6,
+    name: "Barbosa Mello (CBM)",
+    description: "",
+    imageUrl: "/barbosamelo.png",
+    link: "",
+  },
+];
+
+// Fake API: empresas de engenharia / construtoras
+export function fetchContractorCompaniesData() {
+  return new Promise((resolve, reject) => {
+    const success = true;
+
+    setTimeout(() => {
+      if (!success) {
+        reject("Falha ao carregar empresas de engenharia onde já atuamos");
+      } else {
+        resolve(contractorCompaniesData);
+      }
+    }, 400);
+  });
+}
+
+
+// ======================================================
+// Grandes grupos / clientes finais dos projetos
+// (ligados à trajetória profissional do Eng. Fernando)
+// ======================================================
+export const finalClientsData = [
   {
     id: 1,
     name: "Vale S.A.",
@@ -137,6 +201,21 @@ export const servicesData = [
     link: "https://www2.gerdau.com/",
   },
 ];
+
+// Fake API: grupos / clientes finais
+export function fetchFinalClientsData() {
+  return new Promise((resolve, reject) => {
+    const success = true;
+
+    setTimeout(() => {
+      if (!success) {
+        reject("Falha ao carregar grupos/segmentos em que já atuamos");
+      } else {
+        resolve(finalClientsData);
+      }
+    }, 400);
+  });
+}
 
 
 // Fake API: lista de empresas / experiência profissional
@@ -257,25 +336,7 @@ export const deliverablesData = [
     code: "Anexo 08",
     title: "Índices de Produtividade",
     description: "Parâmetros de produtividade utilizados no dimensionamento da obra.",
-  },
-  {
-    id: 8,
-    code: "Anexo 09",
-    title: "Curva S",
-    description: "Curva de acompanhamento físico-financeiro do empreendimento.",
-  },
-  {
-    id: 9,
-    code: "Anexo 10",
-    title: "Lista de Empresas Subcontratadas",
-    description: "Relação de empresas parceiras envolvidas na execução da obra.",
-  },
-  {
-    id: 10,
-    code: "Anexo 12",
-    title: "Declaração de Vistoria",
-    description: "Comprovação de vistoria no local da obra.",
-  },
+  }
 ];
 
 
