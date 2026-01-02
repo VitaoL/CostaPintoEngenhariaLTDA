@@ -63,9 +63,7 @@ function Sobre() {
           </p>
         </header>
 
-        {/* Layout em duas colunas */}
-        <div className="sobre-layout">
-          {/* COLUNA DIREITA – TEXTO + DADOS DA EMPRESA */}
+        <div className="sobre-body">
           <div className="sobre-text-block">
             <h3>Em que acreditamos</h3>
             <p>
