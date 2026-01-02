@@ -84,26 +84,28 @@ function Servicos() {
               técnico e organização de propostas.
             </p>
 
-            <div className="servicos-list">
+            <div className="servicos-list servicos-list--logos">
               {contractors.map((company) => (
-                <div key={company.id} className="servicos-card">
-                  {company.imageUrl && (
-                    <div className="servicos-image-wrapper">
-                      <img
-                        src={company.imageUrl}
-                        alt={company.name}
-                        className="servicos-image"
-                      />
-                    </div>
-                  )}
-
-                  <div className="servicos-card-text">
-                    <h4>{company.name}</h4>
-                    <p>{company.description}</p>
+                <a
+                  key={company.id}
+                  className="servicos-logo-card"
+                  href={company.link || "#"}
+                  target={company.link ? "_blank" : undefined}
+                  rel={company.link ? "noreferrer" : undefined}
+                  onClick={(e) => {
+                    if (!company.link) e.preventDefault();
+                  }}
+                  aria-label={company.name}
+                  title={company.name}
+                >
+                  <div className="servicos-logo">
+                    <img src={company.imageUrl} alt={company.name} />
                   </div>
-                </div>
+                  <div className="servicos-name">{company.name}</div>
+                </a>
               ))}
             </div>
+
           </div>
 
           <div className="servicos-column">
@@ -113,26 +115,28 @@ function Servicos() {
               técnicas para contratação.
             </p>
 
-            <div className="servicos-list">
+           <div className="servicos-list servicos-list--logos">
               {finalClients.map((client) => (
-                <div key={client.id} className="servicos-card">
-                  {client.imageUrl && (
-                    <div className="servicos-image-wrapper">
-                      <img
-                        src={client.imageUrl}
-                        alt={client.name}
-                        className="servicos-image"
-                      />
-                    </div>
-                  )}
-
-                  <div className="servicos-card-text">
-                    <h4>{client.name}</h4>
-                    <p>{client.description}</p>
+                <a
+                  key={client.id}
+                  className="servicos-logo-card"
+                  href={client.link || "#"}
+                  target={client.link ? "_blank" : undefined}
+                  rel={client.link ? "noreferrer" : undefined}
+                  onClick={(e) => {
+                    if (!client.link) e.preventDefault();
+                  }}
+                  aria-label={client.name}
+                  title={client.name}
+                >
+                  <div className="servicos-logo">
+                    <img src={client.imageUrl} alt={client.name} />
                   </div>
-                </div>
+                  <div className="servicos-name">{client.name}</div>
+                </a>
               ))}
             </div>
+
           </div>
         </div>
       </div>

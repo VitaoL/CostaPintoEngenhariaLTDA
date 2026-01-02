@@ -2,33 +2,33 @@ import { enterpriseData } from "./enterprise";
 
 export const aboutHighlights = {
   whoWeAre:
-    "Somos uma empresa familiar de engenharia civil que está começando sua trajetória, com foco em propostas técnicas e apoio à execução de obras.",
+    "Atuamos em engenharia civil com foco em propostas técnicas bem estruturadas, planejamento e apoio à execução, garantindo clareza, conformidade e segurança em cada entrega.",
   whatWeBelieve:
-    "Acreditamos que uma proposta bem-feita nasce do diálogo, da organização e do cuidado em traduzir o escopo com clareza.",
+    "Acreditamos que qualidade se constrói com método: levantamento correto, critérios bem definidos, documentação consistente e comunicação objetiva com todas as partes envolvidas.",
   partnershipFocus:
-    "Buscamos parcerias em que possamos somar confiança, agilidade e atenção aos detalhes que fazem a diferença.",
+    "Trabalhamos como extensão da equipe do cliente, oferecendo agilidade com responsabilidade, padronização de entregas e atenção técnica aos pontos críticos do projeto.",
 };
 
 export const aboutPillars = [
   {
     id: 1,
-    title: "Propostas com começo, meio e fim",
-    text: "Estruturamos escopo, metodologia e critérios de medição para facilitar a análise do contratante.",
+    title: "Propostas técnicas robustas",
+    text: "Organizamos escopo, metodologia, premissas, critérios de medição e entregáveis para facilitar análise, comparação e contratação.",
   },
   {
     id: 2,
-    title: "Responsabilidade técnica",
-    text: "Cuidamos de segurança, qualidade e conformidade com normas e boas práticas.",
+    title: "Responsabilidade e conformidade",
+    text: "Priorizamos segurança, qualidade e aderência às normas aplicáveis, com documentação clara e decisões técnicas justificadas.",
   },
   {
     id: 3,
-    title: "Comunicação humana e direta",
-    text: "Explicamos cada etapa de forma clara, com abertura para ajustes.",
+    title: "Controle, prazos e previsibilidade",
+    text: "Trabalhamos com planejamento e acompanhamento para reduzir retrabalho, minimizar riscos e apoiar o avanço da obra com previsibilidade.",
   },
   {
     id: 4,
-    title: "Parceria próxima",
-    text: "Acompanhamos o cliente do estudo inicial ao fechamento da proposta.",
+    title: "Comunicação objetiva e transparente",
+    text: "Alinhamos expectativas, registramos definições e mantemos o cliente informado, com abertura para ajustes e evolução do projeto.",
   },
 ];
 
@@ -36,25 +36,25 @@ export const serviceAudienceData = [
   {
     id: 1,
     title: "Construtoras e consórcios",
-    text: "Apoiamos equipes que precisam organizar a proposta técnica para licitações e contratos.",
+    text: "Apoiamos a estruturação de propostas técnicas, memoriais e documentação para licitações, contratos e execução, com clareza e padronização.",
   },
   {
     id: 2,
     title: "Empresas de infraestrutura",
-    text: "Atendemos demandas de rodovias, saneamento, logística e obras urbanas.",
+    text: "Atendemos demandas de saneamento, mobilidade, logística e obras urbanas, com foco em planejamento, conformidade e qualidade técnica.",
   },
   {
     id: 3,
-    title: "Setor industrial e mineração",
-    text: "Preparamos documentação para obras, ampliações e serviços especializados.",
+    title: "Indústria e mineração",
+    text: "Preparamos documentação técnica e apoio à execução para adequações, ampliações e serviços especializados, com gestão de riscos e segurança.",
   },
 ];
 
 export const aboutPhotoHighlight = {
   imageUrl: "/ImagemComAlguem.png",
-  alt: "Registro do Eng. Fernando Guimarães Costa Pinto em visita técnica",
+  alt: "Eng. Fernando Guimarães Costa Pinto em visita técnica",
   caption:
-    "Visita técnica em obra de infraestrutura, refletindo a experiência que orienta cada proposta da Costa Pinto Engenharia.",
+    "Visita técnica e acompanhamento em campo: responsabilidade, método e atenção aos detalhes que impactam prazo, custo e qualidade.",
 };
 
 export function fetchAboutData() {

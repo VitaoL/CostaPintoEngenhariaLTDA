@@ -65,63 +65,70 @@
   font-size: 0.95rem;
   color: #d6e2f0;
 }
-
-.servicos-list {
-  display: flex;
-  flex-direction: column;
+/* grade de logos */
+.servicos-list--logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
 }
 
-.servicos-card {
-  display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
+.servicos-logo-card {
+  display: flex;
+  align-items: center;
   gap: 0.85rem;
+
+  text-decoration: none;
   background: rgba(15, 31, 46, 0.92);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.85rem 0.95rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.12s ease, border-color 0.12s ease;
 }
 
-.servicos-image-wrapper {
-  width: 70px;
-  height: 70px;
-  border-radius: 10px;
+.servicos-logo-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.servicos-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
   background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  overflow: hidden;
 }
 
-.servicos-image {
-  max-width: 100%;
-  max-height: 100%;
+.servicos-logo img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  padding: 6px; /* dá respiro */
+  display: block;
 }
 
-.servicos-card-text h4 {
-  margin: 0 0 0.25rem;
+.servicos-name {
   font-size: 0.98rem;
+  font-weight: 600;
   color: #f9fafb;
+  line-height: 1.15;
 }
 
-.servicos-card-text p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #cbd5f5;
-}
-
+/* responsivo */
 @media (max-width: 768px) {
-  .servicos-columns {
+  .servicos-list--logos {
     grid-template-columns: 1fr;
   }
 
-  .servicos-card {
-    grid-template-columns: 60px minmax(0, 1fr);
+  .servicos-logo {
+    width: 52px;
+    height: 52px;
   }
 
-  .servicos-image-wrapper {
-    width: 60px;
-    height: 60px;
+  .servicos-name {
+    font-size: 0.95rem;
   }
 }
