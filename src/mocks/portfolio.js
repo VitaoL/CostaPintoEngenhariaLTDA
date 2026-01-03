@@ -76,7 +76,7 @@ export const deliverablesData = [
   },
   {
     id: 7,
-    code: "Anexo 08",
+    code: "Anexo 07",
     title: "Índices de Produtividade",
     description: "Parâmetros usados no dimensionamento das equipes.",
   },
