@@ -77,7 +77,7 @@ function Servicos() {
         </header>
 
         <div className="servicos-columns">
-          <div className="servicos-column">
+          <div className="servicos-column servicos-column--contractors">
             <h3>Onde já trabalhamos</h3>
             <p className="servicos-subtitle">
               Empresas que confiaram na Costa Pinto Engenharia para apoio
@@ -108,7 +108,7 @@ function Servicos() {
 
           </div>
 
-          <div className="servicos-column">
+          <div className="servicos-column servicos-column--final">
             <h3>Para quem realizamos propostas</h3>
             <p className="servicos-subtitle">
               Clientes finais e segmentos em que já apresentamos propostas
